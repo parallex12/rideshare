@@ -1,0 +1,6 @@
+export const GET_ERRORS = "GET_ERRORS";
+export const GET_USER_DETAILS = "GET_USER_DETAILS";
+export const GET_ALL_JOURNEYS = "GET_ALL_JOURNEYS";
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const GET_CURRENT_JOURNEY = "GET_CURRENT_JOURNEY";
+export const GET_ALL_CHATS = "GET_ALL_CHATS";
