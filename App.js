@@ -52,6 +52,8 @@ export default function App() {
           // console.log(auth);
           onAuthStateChanged(auth, (user) => {
             if (user) {
+              console.log("user",user);
+
               if (user?.emailVerified) {
                 let token = user?.stsTokenManager?.accessToken;
                 Quikify.setToken(token);
@@ -72,7 +74,6 @@ export default function App() {
               }
 
               // console.log(token);
-              // console.log(user);
             } else {
               setUserStatus(false);
             }
@@ -90,7 +91,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <StatusBar style="dark" hidden />
-      {userstatus ? <AppNavigator /> : <Unauthnavigator />}
+      {!userstatus ? <AppNavigator /> : <Unauthnavigator />}
     </Provider>
   );
 }
