@@ -91,7 +91,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <StatusBar style="dark" hidden />
-      {!userstatus ? <AppNavigator /> : <Unauthnavigator />}
+      {userstatus ? <AppNavigator /> : <Unauthnavigator />}
     </Provider>
   );
 }
