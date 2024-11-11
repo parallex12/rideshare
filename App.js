@@ -29,15 +29,10 @@ export default function App() {
   const [fontsLoaded] = useFonts(FontsConfig);
   const [userstatus, setUserStatus] = useState(false);
 
-  // Quikify.configure({ baseURL: "http://192.168.10.11:3000/api" });
-  // axios.defaults.baseURL = "http://192.168.10.11:3000/api";
-
   Quikify.configure({
-    baseURL:
-      "http://ridesharebackend-env.eba-zydzuvqy.ap-south-1.elasticbeanstalk.com/api",
+    baseURL: "https://rideshare-backend-green.vercel.app/api",
   });
-  axios.defaults.baseURL =
-    "http://ridesharebackend-env.eba-zydzuvqy.ap-south-1.elasticbeanstalk.com/api";
+  axios.defaults.baseURL = "https://rideshare-backend-green.vercel.app/api";
 
   useEffect(() => {
     try {
@@ -52,7 +47,7 @@ export default function App() {
           // console.log(auth);
           onAuthStateChanged(auth, (user) => {
             if (user) {
-              console.log("user",user);
+              console.log("user", user);
 
               if (user?.emailVerified) {
                 let token = user?.stsTokenManager?.accessToken;
@@ -64,7 +59,7 @@ export default function App() {
                     setUserStatus(true);
                   })
                   .catch((e) => {
-                    console.log("hereee", e);
+                    console.log("heresssee", e);
                     // signOut(auth);
                     setUserStatus(false);
                   });
