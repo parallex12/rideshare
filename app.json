@@ -51,7 +51,7 @@
     "updates": {
       "url": "https://u.expo.dev/d2d54579-3a32-4d75-bcae-d131bfa0143a"
     },
-    "extra": {
+    "_extra": {
       "eas": {
         "projectId": "d2d54579-3a32-4d75-bcae-d131bfa0143a"
       }
