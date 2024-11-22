@@ -25,10 +25,20 @@ export const styles = ({ width, height }) =>
       // height: getPercent(40, height),
       justifyContent: "center",
     },
+    checkBox: {
+      height: getPercent(2, height),
+      width: getPercent(2, height),
+      borderRadius: 100,
+      borderWidth: 1,
+      borderColor: light?.btnbody,
+      alignItems: "center",
+      justifyContent: "center"
+    },
     termswrapper: {
       flexDirection: "row",
       alignItems: "center",
       paddingHorizontal: getPercent(5, width),
+      width: getPercent(90, width)
     },
     signinguptext: {
       fontFamily: "Medium",

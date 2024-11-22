@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/Onboarding3/main";
 
 const Onboading3 = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -20,27 +20,32 @@ const Onboading3 = (props) => {
       </View>
       <View style={styles.framewrapper}>
         <TouchableOpacity
-          onPress={() => props?.navigation?.navigate("Riderwelcome")}
-          style={styles.framebody}
+          onPress={() => props?.navigation?.navigate("Riderwelcome", { type: "rider" })}
+          style={styles.framebodyWrapper}
         >
-          <Image
-            source={require("../../assets/images/onboarding3.png")}
-            style={{ height: "80%", width: "80%" }}
-            resizeMode="contain"
-          />
+          <View style={styles.framebody}>
+            <Image
+              source={require("../../assets/images/onboarding3.png")}
+              style={{ height: "80%", width: "80%" }}
+              resizeMode="contain"
+            />
+          </View>
+          <Text style={styles.optionTxt}>Rider</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props?.navigation?.navigate("Welcome")}
-          style={styles.framebody}
+          onPress={() => props?.navigation?.navigate("Riderwelcome", { type: "customer" })}
+          style={styles.framebodyWrapper}
         >
-          <Image
-            source={require("../../assets/images/onboarding4.png")}
-            style={{ height: "80%", width: "80%" }}
-            resizeMode="contain"
-          />
+          <View style={styles.framebody}>
+            <Image
+              source={require("../../assets/images/onboarding4.png")}
+              style={{ height: "80%", width: "80%" }}
+              resizeMode="contain"
+            />
+          </View>
+          <Text style={styles.optionTxt}>Customer</Text>
         </TouchableOpacity>
       </View>
-
       <View style={styles.btnwrapper}>
         <TouchableOpacity
           onPress={() => props?.navigation?.navigate("Register")}

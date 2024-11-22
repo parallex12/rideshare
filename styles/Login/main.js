@@ -36,11 +36,21 @@ export const styles = ({ width, height }) =>
       flexDirection: "row",
       alignItems: "center",
       paddingHorizontal: getPercent(5, width),
+      width: getPercent(90, width)
+    },
+    checkBox: {
+      height: getPercent(2, height),
+      width: getPercent(2, height),
+      borderRadius: 100,
+      borderWidth: 1,
+      borderColor: light?.btnbody,
+      alignItems: "center",
+      justifyContent: "center"
     },
     signinguptext: {
       fontFamily: "Medium",
       fontSize: rf(11),
-      color: light?.fieldtext,
+      color: light?.LableText,
       marginLeft: 10,
     },
     btnwrapper: {

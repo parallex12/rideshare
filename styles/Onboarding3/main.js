@@ -15,11 +15,16 @@ export const styles = ({ width, height }) =>
       flexDirection: "row",
       justifyContent: "space-around",
     },
-
+    framebodyWrapper: {
+      height: getPercent(28, height),
+      width: getPercent(40, width),
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
     framebody: {
       height: getPercent(25, height),
-      backgroundColor: light?.vectorbody,
       width: getPercent(40, width),
+      backgroundColor: light?.vectorbody,
       borderRadius: 10,
       justifyContent: "center",
       alignItems: "center",
@@ -36,7 +41,11 @@ export const styles = ({ width, height }) =>
       fontSize: rf(22),
       color: light.standardtext,
     },
-
+    optionTxt: {
+      fontFamily: "Medium",
+      fontSize: rf(18),
+      color: light.standardtext,
+    },
     btnwrapper: {
       flex: 0.3,
       justifyContent: "center",

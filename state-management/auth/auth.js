@@ -7,6 +7,7 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
   updatePassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { doc, getFirestore, setDoc } from "firebase/firestore/lite";
 import { GET_ERRORS, GET_USER_DETAILS } from "../types/types";
@@ -28,14 +29,13 @@ export const SignUp = (data, setLoading, navigation) => async (dispatch) => {
             console.log("Welcome !!");
             _sendEmailVerification(user, navigation);
             setLoading(false);
-            // navigation.goBack();
-            // Quikify.get("/users")
-            //   .then((res) => {
-            //     dispatch({ type: GET_USER_DETAILS, payload: res });
-            //   })
-            //   .catch((e) => {
-            //     console.log("hhhhh", e);
-            //   });
+            Quikify.get("/users")
+              .then((res) => {
+                dispatch({ type: GET_USER_DETAILS, payload: res });
+              })
+              .catch((e) => {
+                console.log("hhhhh", e);
+              });
 
             setLoading(false);
           })
@@ -92,14 +92,19 @@ export const LoginWithEmailPass =
     }
   };
 
-export const _sendEmailVerification = async (user) => {
+export const _sendEmailVerification = async (user, navigation) => {
   const auth = getAuth();
   await sendEmailVerification(user)
     .then((res) => {
       Alert.alert(
         "Alert",
         "Verification Email sent, Please verify your email.",
-        [{ text: "OK", onPress: () => signOut(auth) }]
+        [
+          {
+            text: "OK",
+            onPress: () => signOut(auth)
+          },
+        ]
       );
     })
     .catch((error) => {
@@ -125,6 +130,32 @@ export const SignOut = () => async (dispatch) => {
     dispatch({ type: GET_ERRORS, payload: e.message });
   }
 };
+
+export const resetPassword =
+  (data, setLoading, navigation) => async (dispatch) => {
+    const { email } = data
+    try {
+      const auth = getAuth();
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          Alert.alert("Alert", "Password reset email sent!", [
+            { text: "OK", onPress: () => navigation.navigate("Login") },
+          ]);
+          setLoading(false)
+        })
+        .catch((error) => {
+          console.log("error", error);
+          setLoading(false);
+          const errorMessage = error.message;
+          dispatch({ type: GET_ERRORS, payload: errorMessage });
+          alert("Email or password is incorrect !");
+        });
+    } catch (e) {
+      setLoading(false);
+      console.log("errorrs", e);
+      dispatch({ type: GET_ERRORS, payload: e.message });
+    }
+  };
 
 export const changePassword =
   (data, setLoading, navigation) => async (dispatch) => {

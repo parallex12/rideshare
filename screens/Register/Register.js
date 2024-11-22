@@ -16,9 +16,10 @@ import StandardButton from "../../globalComponents/StandardButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SignUp } from "../../state-management/auth/auth";
 import { validatePassword, validateUser } from "../../middleware";
+import { light } from "../../scheme";
 
 const Register = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -28,6 +29,7 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [check, setCheck] = useState(false);
 
   const _handleSignup = () => {
     // props?.navigation?.navigate("Enterphone");
@@ -38,6 +40,8 @@ const Register = (props) => {
       password === ""
     ) {
       alert("Provide All Details");
+    } else if (!check) {
+      alert("Please agree to our terms of service");
     } else {
       validatePassword(password, confirmPassword)
         .then((res) => {
@@ -93,9 +97,11 @@ const Register = (props) => {
           />
         </View>
         <View style={styles.termswrapper}>
-          <Globalicons image={require("../../assets/icons/5.png")} />
+          <TouchableOpacity style={styles.checkBox} onPress={() => setCheck(!check)} >
+            {check && <AntDesign name="check" size={14} color={light.btnbody} />}
+          </TouchableOpacity>
           <Text style={styles.signinguptext}>
-            By signing up. you agree to the Terms of service and Privacy policy.
+            By signing up. you agree to the <Text style={[styles.signinguptext, { color: light.btnbody }]} onPress={() => props?.navigation?.navigate("Privacypolicy")} >Terms of service and Privacy policy</Text>.
           </Text>
         </View>
         <View style={styles.btnwrapper}>

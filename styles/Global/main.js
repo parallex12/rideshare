@@ -126,7 +126,7 @@ export const Notificationsheaderstyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
       paddingHorizontal: getPercent(5, width),
-      height: getPercent(10, height),
+      height: getPercent(12, height),
       width: getPercent(100, width),
       flexDirection: "row",
       alignItems: "center",

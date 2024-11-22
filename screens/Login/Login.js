@@ -15,15 +15,18 @@ import Globalicons from "../../globalComponents/Globalicons";
 import StandardButton from "../../globalComponents/StandardButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { LoginWithEmailPass } from "../../state-management/auth/auth";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { light } from "../../scheme";
 
 const Login = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
   const data = props?.route?.params;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [check, setCheck] = useState(false);
 
   let socialicons = [
     require("../../assets/icons/google.png"),
@@ -34,6 +37,8 @@ const Login = (props) => {
   const _HandleLogin = () => {
     if (email.length === 0 || password.length === 0) {
       alert("Provide Valid Email and Password");
+    } else if (!check) {
+      alert("Please agree to our terms of service");
     } else {
       let form = { email, password };
       setLoading(true);
@@ -61,12 +66,16 @@ const Login = (props) => {
             value={password}
             secureTextEntry={true}
           />
-          <Text style={styles.forgottext}>Forgot Password?</Text>
+          <TouchableOpacity onPress={() => props?.navigation?.navigate("ForgotPassword")} >
+            <Text style={styles.forgottext}>Forgot Password?</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.termswrapper}>
-          <Globalicons image={require("../../assets/icons/5.png")} />
+          <TouchableOpacity style={styles.checkBox} onPress={() => setCheck(!check)} >
+            {check && <AntDesign name="check" size={14} color={light.btnbody} />}
+          </TouchableOpacity>
           <Text style={styles.signinguptext}>
-            By signing up. you agree to the Terms of service and Privacy policy.
+            By signing up. you agree to the <Text style={[styles.signinguptext, { color: light.btnbody }]} onPress={() => props?.navigation?.navigate("Privacypolicy")} >Terms of service and Privacy policy</Text>.
           </Text>
         </View>
         <View style={styles.btnwrapper}>

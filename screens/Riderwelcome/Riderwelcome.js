@@ -11,15 +11,14 @@ import StandardButton from "../../globalComponents/StandardButton";
 import { light } from "../../scheme";
 
 const Riderwelcome = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
-  let routeType = "rider";
+  let routeType = props?.route?.params?.type;
   return (
     <View style={styles.container}>
       <View style={styles.framewrapper}>
         <View
-          onPress={() => props?.navigation?.navigate("")}
           style={styles.framebody}
         >
           <Image
@@ -35,7 +34,7 @@ const Riderwelcome = (props) => {
       </View>
       <View style={styles.btnwrapper}>
         <StandardButton
-          onPress={() => props?.navigation?.navigate("Riderregister")}
+          onPress={() => props?.navigation?.navigate("Riderregister", { routeType: routeType })}
           title={"Create an acocunt"}
         />
         <StandardButton

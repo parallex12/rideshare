@@ -54,8 +54,8 @@ function AppNavigation() {
   return (
     <Navigator screenOptions={{ headerShown: false, animationEnabled: false }}>
       {/* <Screen name="Login" component={Login} /> */}
-      <Screen name="Home" component={Home} />
       <Screen name="Splash" component={Splash} />
+      <Screen name="Home" component={Home} />
       <Screen name="Riderhome" component={Riderhome} />
       {/* <Screen name="Onboarding1" component={Onboarding1} /> */}
       <Screen name="Lisenceverification" component={Lisenceverification} />

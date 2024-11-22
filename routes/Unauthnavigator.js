@@ -9,6 +9,8 @@ import Welcome from "../screens/Welcome/Welcome";
 import Register from "../screens/Register/Register";
 import Riderregister from "../screens/Riderregister/Riderregister";
 import Riderwelcome from "../screens/Riderwelcome/Riderwelcome";
+import ForgotPassword from "../screens/ForgotPassword/ForgotPassword";
+import Privacypolicy from "../screens/Privacypolicy/Privacypolicy";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -23,6 +25,8 @@ function AppNavigation() {
       <Screen name="Register" component={Register} />
       <Screen name="Riderwelcome" component={Riderwelcome} />
       <Screen name="Riderregister" component={Riderregister} />
+      <Screen name="ForgotPassword" component={ForgotPassword} />
+      <Screen name="Privacypolicy" component={Privacypolicy} />
     </Navigator>
   );
 }
