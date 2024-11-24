@@ -19,7 +19,7 @@ import { getAuth } from "firebase/auth";
 import { GET_USER_DETAILS } from "../../state-management/types/types";
 import { ActivityIndicator } from "react-native";
 const Rideridverification = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
   const routetype = props?.route?.params;

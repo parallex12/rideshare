@@ -19,6 +19,12 @@ export const styles = ({ width, height }) =>
       color: light?.lable,
       textAlign: "center",
     },
+    descTxt: {
+      fontFamily: "Regular",
+      fontSize: rf(14),
+      color: light?.lable,
+      marginTop: getPercent(2, height)
+    },
     lable: {
       fontFamily: "Medium",
       fontSize: rf(14),
@@ -48,8 +54,13 @@ export const styles = ({ width, height }) =>
       marginLeft: 10,
     },
     btnwrapper: {
-      flex: 1,
-      justifyContent: "center",
       alignItems: "center",
+      justifyContent: "space-between",
+      height: getPercent(16, height),
+      marginTop: getPercent(5, height)
+    },
+    logoutBtn: {
+      backgroundColor: light.background,
+      borderWidth: 1,
     },
   });

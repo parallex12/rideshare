@@ -6,12 +6,19 @@ import { light } from "../../scheme";
 //Styles Styles starts here
 export const styles = ({ width, height }) =>
   StyleSheet.create({
+    wrapper: {
+      height: getPercent(100, height),
+      width: getPercent(100, width),
+      alignSelf: "center",
+      position: "absolute",
+      backgroundColor: "#000",
+      zIndex: 99,
+      justifyContent: "Flex-end",
+    },
     container: {
       height: getPercent(60, height),
       width: getPercent(100, width),
       alignSelf: "center",
-      position: "absolute",
-      bottom: 0,
       borderTopRightRadius: 20,
       borderTopLeftRadius: 20,
       backgroundColor: light?.background,
@@ -39,11 +46,12 @@ export const styles = ({ width, height }) =>
       alignSelf: "center",
     },
     inputstyles: {
+      // height: "100%",
+      justifyContent: "center",
       fontFamily: "Medium",
       fontSize: rf(12),
       color: light?.standardtext,
       // width: "100%",
-      flex: 1,
       paddingLeft: 10,
     },
 
@@ -52,6 +60,7 @@ export const styles = ({ width, height }) =>
       fontSize: rf(14),
       color: light?.standardtext,
       marginTop: 10,
+
     },
     recentbody: {
       flexDirection: "row",
@@ -66,16 +75,19 @@ export const styles = ({ width, height }) =>
       fontFamily: "Medium",
       fontSize: rf(14),
       color: light?.standardtext,
+
     },
     recentaddresstext: {
       fontFamily: "Regular",
       fontSize: rf(11),
       color: light?.fieldtext,
+
     },
     kmtext: {
       fontFamily: "Regular",
       fontSize: rf(11),
       color: light?.standardtext,
+
     },
     btnwrappr: {
       alignItems: "center",

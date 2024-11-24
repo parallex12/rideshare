@@ -17,7 +17,7 @@ const Globalicons = (props) => {
   let styles = Gloabliconstyles({ width, height });
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container} {...props} >
       <Image
         source={image}
         style={{ height: "100%", width: "100%" }}

@@ -15,6 +15,7 @@ export const styles = ({ width, height }) =>
       borderBottomRightRadius: 50,
       backgroundColor: light?.background,
       padding: 10,
+      paddingTop: getPercent(5, height)
     },
     backiconwrapper: {
       flexDirection: "row",
@@ -26,9 +27,10 @@ export const styles = ({ width, height }) =>
       color: light?.LableText,
     },
     profilewrapper: {
-      height: getPercent(25, height),
-      justifyContent: "space-around",
+      height: getPercent(20, height),
+      // justifyContent: "space-around",
       marginVertical: 5,
+      paddingTop: getPercent(3, height)
     },
     framebody: {
       height: getPercent(7, height),
@@ -42,6 +44,8 @@ export const styles = ({ width, height }) =>
       fontFamily: "Medium",
       fontSize: rf(15),
       color: light?.LableText,
+      marginTop: getPercent(2, height)
+
     },
     emailtext: {
       fontFamily: "Medium",

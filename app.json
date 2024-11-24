@@ -21,6 +21,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled":true,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -51,7 +52,7 @@
     "updates": {
       "url": "https://u.expo.dev/d2d54579-3a32-4d75-bcae-d131bfa0143a"
     },
-    "_extra": {
+    "extra": {
       "eas": {
         "projectId": "d2d54579-3a32-4d75-bcae-d131bfa0143a"
       }

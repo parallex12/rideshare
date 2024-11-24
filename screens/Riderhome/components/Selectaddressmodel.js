@@ -66,68 +66,38 @@ const Selectaddressmodel = (props) => {
           <AntDesign name="close" size={20} color={light?.standardtext} />
         </TouchableOpacity>
         <Text style={styles.selecttext}>Select address</Text>
-        <View style={styles.pickuplocationbody}>
+        <TouchableOpacity onPress={() => setChoosePickup(true)} style={styles.pickuplocationbody}>
           <Globalicons
-            onPress={() => setChoosePickup(true)}
+            // onPress={() => setChoosePickup(true)}
             image={require("../../../assets/icons/pick.png")}
           />
           <TextInput
             placeholder={postData?.pickup || "From"}
             placeholderTextColor={light?.fieldbody}
-            style={styles.inputstyles}
+
             multiline={false}
             // value={postData?.pickup}
             editable={false}
 
-            // onChangeText={(val) => handleChange(val)}
+          // onChangeText={(val) => handleChange(val)}
           />
-        </View>
-        <View style={styles.pickuplocationbody}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setChooseDrop(true)} style={styles.pickuplocationbody}>
           <Globalicons
-            onPress={() => setChooseDrop(true)}
             image={require("../../../assets/icons/drop.png")}
           />
+
           <TextInput
             placeholder={postData?.drop || "To"}
             placeholderTextColor={light?.fieldbody}
-            style={styles.inputstyles}
             multiline={false}
             // value={postData?.drop}
             editable={false}
 
-            // onChangeText={(val) => handleChange(val)}
+          // onChangeText={(val) => handleChange(val)}
           />
-          {/* <GooglePlacesAutocomplete
-            placeholder="Search Location"
-            textInputProps={{
-              placeholderTextColor: "#222",
-              returnKeyType: "search",
-            }}
-            minLength={2}
-            autoFocus={false}
-            onPress={(data, details = null) => {
-              let loc = {
-                latitude: details?.geometry?.location?.lat,
-                longitude: details?.geometry?.location?.lng,
-              };
-              reverseLocation(loc);
-            }}
-            // currentLocation
-            enableHighAccuracyLocation
-            query={{
-              key: "AIzaSyA6surUeMftKcbcklIt-UO_lTaQBx7B0u0",
-              language: "en",
-            }}
-            returnKeyType={"default"}
-            fetchDetails={true}
-            styles={{
-              textInput: styles.inputstyles,
-              predefinedPlacesDescription: {
-                color: "#1faadb",
-              },
-            }}
-          /> */}
-        </View>
+
+        </TouchableOpacity>
         <Text style={styles.recenttext}>Recent Search</Text>
         <ScrollView showsVerticalScrollIndicator={false}>
           {recent?.map((item, index) => {
@@ -147,7 +117,7 @@ const Selectaddressmodel = (props) => {
           </View>
         </ScrollView>
       </View>
-    </Modal>
+    </Modal >
   );
 };
 

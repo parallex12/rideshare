@@ -20,20 +20,19 @@ const Locationsearch = (props) => {
   let styles = _styles({ width, height });
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.searchbody}>
-        <Globalicons image={require("../../../assets/icons/search.png")} />
-        <View style={{ flex: 1, paddingLeft: 10 }}>
+        <Globalicons disabled={true} image={require("../../../assets/icons/search.png")} />
+        <TouchableOpacity onPress={onPress} style={{ flex: 1, paddingLeft: 10 }}>
           <Text style={styles.wheretext}>Where would you go?</Text>
-        </View>
-        <Globalicons image={require("../../../assets/icons/heart.png")} />
+        </TouchableOpacity>
       </View>
       <StandardButton
         onPress={onNextpress}
         customStyles={{ width: getPercent(80, width) }}
         title={"Next"}
       />
-    </TouchableOpacity>
+    </View>
   );
 };
 

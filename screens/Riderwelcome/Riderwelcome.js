@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/Welcome/main";
 import StandardButton from "../../globalComponents/StandardButton";
 import { light } from "../../scheme";
+import Globalheader from "../../globalComponents/Globalheader";
 
 const Riderwelcome = (props) => {
   let { } = props;
@@ -17,6 +18,7 @@ const Riderwelcome = (props) => {
   let routeType = props?.route?.params?.type;
   return (
     <View style={styles.container}>
+      <Globalheader navigation={props?.navigation} />
       <View style={styles.framewrapper}>
         <View
           style={styles.framebody}

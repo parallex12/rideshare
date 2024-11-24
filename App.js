@@ -47,15 +47,12 @@ export default function App() {
           // console.log(auth);
           onAuthStateChanged(auth, (user) => {
             if (user) {
-              console.log("user", user);
-
               if (user?.emailVerified) {
                 let token = user?.stsTokenManager?.accessToken;
                 Quikify.setToken(token);
                 setAuthToken(token);
                 Quikify.get("/users", GET_USER_DETAILS)
                   .then((res) => {
-                    console.log(res);
                     setUserStatus(true);
                   })
                   .catch((e) => {

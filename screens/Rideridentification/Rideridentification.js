@@ -10,9 +10,10 @@ import { Quikify } from "quikify";
 import { GET_USER_DETAILS } from "../../state-management/types/types";
 import { getAuth } from "firebase/auth";
 import { SignOut } from "../../state-management/auth/auth";
+import { light } from "../../scheme";
 
 const Rideridentification = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
   const uid = getAuth().currentUser.uid;
@@ -53,15 +54,15 @@ const Rideridentification = (props) => {
         userDetails?.passportFront
           ? alert("Your Passport is already submitted")
           : props?.navigation?.navigate("Rideridverification", {
-              type: "passport",
-            });
+            type: "passport",
+          });
         break;
       case "license":
         userDetails?.licenseFront
           ? alert("Your LIcense is already submitted")
           : props?.navigation?.navigate("Lisenceverification", {
-              type: "license",
-            });
+            type: "license",
+          });
         break;
       default:
         alert("Please Select An Option");
@@ -69,11 +70,14 @@ const Rideridentification = (props) => {
     }
   };
 
+
   return (
     <View style={styles.container}>
       <Globalheader navigation={props?.navigation} />
       <View style={styles.textwrapper}>
         <Text style={styles.textstyles}>Identification</Text>
+        <Text style={styles.descTxt}>Howdy {`${userDetails?.firstName} ${userDetails?.lastName}`}!
+          {"\n"}Please upload your documents so that we can know you better </Text>
       </View>
       <Identificationoptions
         isselect={isselect}
@@ -87,10 +91,10 @@ const Rideridentification = (props) => {
           userDetails?.idFront && userDetails?.idBack
             ? require("../../assets/icons/id6.png")
             : isselect === "id"
-            ? require("../../assets/icons/id5.png")
-            : require("../../assets/icons/id4.png")
+              ? require("../../assets/icons/id5.png")
+              : require("../../assets/icons/id4.png")
         }
-        // onPress={() => props?.navigation?.navigate("Rideridverification")}
+      // onPress={() => props?.navigation?.navigate("Rideridverification")}
       />
       <Identificationoptions
         isselect={isselect}
@@ -105,8 +109,8 @@ const Rideridentification = (props) => {
           userDetails?.passportFront && userDetails?.passportBack
             ? require("../../assets/icons/id6.png")
             : isselect === "passport"
-            ? require("../../assets/icons/id5.png")
-            : require("../../assets/icons/id4.png")
+              ? require("../../assets/icons/id5.png")
+              : require("../../assets/icons/id4.png")
         }
       />
       <Identificationoptions
@@ -122,12 +126,14 @@ const Rideridentification = (props) => {
           userDetails?.licenseFront && userDetails?.licenseBack
             ? require("../../assets/icons/id6.png")
             : isselect === "license"
-            ? require("../../assets/icons/id5.png")
-            : require("../../assets/icons/id4.png")
+              ? require("../../assets/icons/id5.png")
+              : require("../../assets/icons/id4.png")
         }
       />
       <View style={styles.btnwrapper}>
         <StandardButton title={"Select"} onPress={onNavigate} />
+        <StandardButton title={"Logout"} onPress={() => props?.SignOut()}
+          customStyles={styles.logoutBtn} textStyles={{ color: light.standardtext }} />
       </View>
     </View>
   );

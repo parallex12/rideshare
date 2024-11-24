@@ -10,17 +10,16 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { styles as _styles } from "../../../styles/Documentphoto/Pickertaker";
-import { Camera, CameraType } from "expo-camera";
+import { useCameraPermissions, CameraView } from "expo-camera";
 import StandardButton from "../../../globalComponents/StandardButton";
 import { getPercent } from "../../../middleware";
 const Rideridverification = (props) => {
   let { cameraPhoto, setCameraPhoto } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
-
-  const [type, setType] = useState(CameraType.back);
-  const [permission, requestPermission] = Camera.useCameraPermissions();
+  const [permission, requestPermission] = useCameraPermissions();
   const ref = useRef(null);
+
 
   if (!permission) {
     // Camera permissions are still loading
@@ -39,11 +38,6 @@ const Rideridverification = (props) => {
     );
   }
 
-  function toggleCameraType() {
-    setType((current) =>
-      current === CameraType.back ? CameraType.front : CameraType.back
-    );
-  }
 
   _takePhoto = async () => {
     if (cameraPhoto) {
@@ -64,12 +58,11 @@ const Rideridverification = (props) => {
             resizeMode="cover"
           />
         ) : (
-          <Camera
+          <CameraView
             style={styles.camera}
             ref={ref}
             ratio="4:3"
-            type={type}
-          ></Camera>
+          ></CameraView>
         )}
       </View>
       <StandardButton

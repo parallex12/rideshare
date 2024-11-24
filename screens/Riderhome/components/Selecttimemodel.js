@@ -53,16 +53,16 @@ const selecttitmemodel = (props) => {
   ];
 
   return (
-    <Modal transparent animationType="slide">
-      <View style={{ flex: 1, backgroundColor: "#00000aaa" }}></View>
+    <View style={styles.wrapper} >
+      <TouchableOpacity style={{ flex: 1, backgroundColor: "#00000aaa" }}></TouchableOpacity>
       <View style={styles.container}>
         <TouchableOpacity onPress={onclosepress} style={styles.closeiconbody}>
           <AntDesign name="close" size={20} color={light?.standardtext} />
         </TouchableOpacity>
         <Text style={styles.selecttext}>Select time</Text>
-        <View style={styles.pickuplocationbody}>
+        <TouchableOpacity onPress={() => showDatePicker()} style={styles.pickuplocationbody}>
           <Globalicons
-            onPress={() => showDatePicker()}
+
             image={require("../../../assets/icons/15.png")}
           />
           <Text style={styles.inputstyles}>{fulldate}</Text>
@@ -72,7 +72,7 @@ const selecttitmemodel = (props) => {
             style={styles.inputstyles}
             multiline
           /> */}
-        </View>
+        </TouchableOpacity>
 
         <Text style={styles.recenttext}>Related times</Text>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -81,9 +81,8 @@ const selecttitmemodel = (props) => {
               <View key={index} style={styles.recentbody}>
                 <Globalicons image={item?.icon} />
                 <View style={styles.textbody}>
-                  <Text style={styles.recentlocationstext}>{item?.lable}</Text>
+                  <Text style={styles.recentlocationstext}>{item?.lable} {item?.km}</Text>
                 </View>
-                <Text style={styles.kmtext}>{item?.km}</Text>
               </View>
             );
           })}
@@ -91,8 +90,7 @@ const selecttitmemodel = (props) => {
             <StandardButton onPress={onConfirmPress} title={"Confirm Time"} />
           </View>
         </ScrollView>
-      </View>
-    </Modal>
+      </View></View >
   );
 };
 

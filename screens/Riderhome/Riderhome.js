@@ -21,13 +21,12 @@ import Sidemenu from "./components/Sidemenu";
 import Selecttimemodel from "./components/Selecttimemodel";
 import DatePicker, { getFormatedDate } from "react-native-modern-datepicker";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-
 import moment from "moment";
 import { getTimeOnly } from "../../middleware";
 import { Quikify } from "quikify";
 
 const Home = (props) => {
-  let {} = props;
+  let { } = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -180,7 +179,7 @@ const Home = (props) => {
     setIsmodelvisible(false);
     setIstimevisible(true);
   };
-
+  console.log(istimevisible)
   const showDatePicker = () => {
     // setDatePickerMode(type);
     setDatePickerVisibility(true);
@@ -319,9 +318,9 @@ const Home = (props) => {
             mode={"datetime"}
             onConfirm={(date) => handleConfirm(date)}
             onCancel={() => setDatePickerVisibility(!isDatePickerVisible)}
-
-            // onSelectedChange={() => console.log("hello")}
-            // onCancel={hideDatePicker}
+            isDarkModeEnabled={true}
+          // onSelectedChange={() => console.log("hello")}
+          // onCancel={hideDatePicker}
           />
         </View>
       )}

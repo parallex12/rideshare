@@ -31,6 +31,7 @@ export const Homeheaderstyles = ({ width, height }) =>
   StyleSheet.create({
     container: {
       paddingHorizontal: getPercent(5, width),
+      paddingTop: getPercent(5, height),
       height: getPercent(10, height),
       width: getPercent(100, width),
       flexDirection: "row",
