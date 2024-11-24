@@ -179,7 +179,6 @@ const Home = (props) => {
     setIsmodelvisible(false);
     setIstimevisible(true);
   };
-  console.log(istimevisible)
   const showDatePicker = () => {
     // setDatePickerMode(type);
     setDatePickerVisibility(true);
