@@ -18,7 +18,7 @@ import { Quikify } from "quikify";
 import getDistance from "geolib/es/getDistance";
 
 const Availablecars = (props) => {
-  let {} = props;
+  let { } = props;
 
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
@@ -89,7 +89,7 @@ const Availablecars = (props) => {
                   key={index}
                   item={item}
                   user_id={props?.get_user_details?.id}
-                  // onBookPress={() => onBookRide(item, index)}
+                // onBookPress={() => onBookRide(item, index)}
                 />
               );
             })}

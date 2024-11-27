@@ -16,7 +16,7 @@ import { Quikify } from "quikify";
 import { getAuth } from "firebase/auth";
 
 const Deleteaccount = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -26,7 +26,7 @@ const Deleteaccount = (props) => {
     user
       .delete()
       .then((result) => {
-        Quikify.delete("/users")
+        Quikify.delete(`/users/${user.uid}`)
           .then((res) => {
             console.log(res);
           })

@@ -12,7 +12,7 @@ export const styles = ({ width, height }) =>
     },
     daytextwrapper: {
       paddingLeft: getPercent(5, width),
-      height: getPercent(8, height),
+      marginVertical: getPercent(1, height),
       justifyContent: "center",
     },
     daytext: {
@@ -21,9 +21,13 @@ export const styles = ({ width, height }) =>
       color: light?.LableText,
     },
     contentwrapper: {
-      paddingLeft: getPercent(8, width),
+      padding: getPercent(2, width),
       justifyContent: "center",
       marginVertical: 5,
+      backgroundColor: "#FFFBF5",
+      width: getPercent(90, width),
+      alignSelf: "center",
+      borderRadius: 8
     },
     paymenttext: {
       fontFamily: "SemiBold",

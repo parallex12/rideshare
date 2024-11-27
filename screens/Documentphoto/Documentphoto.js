@@ -30,7 +30,6 @@ const Rideridverification = (props) => {
 
   const onSubmit = () => {
     const uid = getAuth().currentUser.uid;
-
     if (photo) {
       setLoading(true);
       firebaseImageUpload(photo)

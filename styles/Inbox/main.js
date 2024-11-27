@@ -12,7 +12,7 @@ export const styles = ({ width, height }) =>
     },
     headerbody: {
       height: getPercent(8, height),
-      justifyContent: "center",
+      justifyContent: "flex-end",
       alignItems: "center",
       width: getPercent(100, width),
     },

@@ -130,9 +130,8 @@ export const toHMS_OBJ = (seconds) => {
 
 export const formatDate = (date) => {
   let formattedDate = new Date(date);
-  formattedDate = `${formattedDate.getDate()}-${
-    formattedDate.getMonth() + 1
-  }-${formattedDate.getFullYear()} `;
+  formattedDate = `${formattedDate.getDate()}-${formattedDate.getMonth() + 1
+    }-${formattedDate.getFullYear()} `;
   return formattedDate;
 };
 

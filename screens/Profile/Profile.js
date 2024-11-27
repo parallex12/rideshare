@@ -14,7 +14,7 @@ import { getPercent } from "../../middleware";
 import Bottommenu from "../../globalComponents/Bottommenu";
 import Globalfields from "../../globalComponents/Globalfields";
 const Profile = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -26,7 +26,12 @@ const Profile = (props) => {
         <Text style={styles.headertext}>Profile</Text>
         <View style={styles.framewrapper}>
           <Image
-            source={require("../../assets/images/user.png")}
+            // source={require("../../assets/images/user.png")}
+            source={
+              userDetails?.profile
+                ? { uri: userDetails?.profile }
+                : require("../../assets/images/user.png")
+            }
             style={{ height: "100%", width: "100%" }}
             resizeMode="contain"
           />

@@ -44,7 +44,6 @@ export default function App() {
             persistence: getReactNativePersistence(AsyncStorage),
           });
           // const storage = getStorage(a);
-          // console.log(auth);
           onAuthStateChanged(auth, (user) => {
             if (user) {
               if (user?.emailVerified) {

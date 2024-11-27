@@ -24,7 +24,7 @@ export const styles = ({ width, height }) =>
     text: {
       fontFamily: "Medium",
       fontSize: rf(13),
-      color: light?.fieldtext,
+      color: light?.standardtext,
     },
     fieldwrapper: {
       paddingHorizontal: getPercent(5, width),
@@ -45,6 +45,8 @@ export const styles = ({ width, height }) =>
       width: getPercent(13, height),
       overflow: "hidden",
       borderRadius: 100,
+      borderWidth: 1,
+      borderColor: "#e5e5e5"
     },
     headertext: {
       fontFamily: "Medium",

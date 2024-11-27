@@ -30,7 +30,7 @@ const Globalheader = (props) => {
         <Text style={styles.backtext}>Back</Text>
       </TouchableOpacity>
       <View
-        style={{ flex: 0.9, justifyContent: "center", alignItems: "center" }}
+        style={{ flex: 0.82, justifyContent: "center", alignItems: "center" }}
       >
         <Text style={styles.title}>{title}</Text>
       </View>
