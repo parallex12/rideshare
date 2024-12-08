@@ -43,29 +43,31 @@ const Rideridentification = (props) => {
     }
   }, [props?.get_user_details]);
 
+  console.log("here", isselect)
+
   const onNavigate = () => {
     switch (isselect) {
       case "id":
         userDetails?.idFront
           ? alert("Your Id is already submitted")
-          : props?.navigation?.navigate("Rideridverification", { type: "id" });
+          : props?.navigation?.navigate("Rideridverification", { type: "id" }), setisSelect("");
         break;
       case "passport":
         userDetails?.passportFront
           ? alert("Your Passport is already submitted")
           : props?.navigation?.navigate("Rideridverification", {
             type: "passport",
-          });
+          }), setisSelect("");
         break;
       case "license":
         userDetails?.licenseFront
           ? alert("Your LIcense is already submitted")
           : props?.navigation?.navigate("Lisenceverification", {
             type: "license",
-          });
+          }), setisSelect("");
         break;
       default:
-        alert("Please Select An Option");
+        alert("Please upload and verify all your documents");
         return;
     }
   };

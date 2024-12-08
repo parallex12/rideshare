@@ -13,7 +13,7 @@ import { light } from "../scheme";
 import { getPercent } from "../middleware";
 
 const Globalfields = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = Globalfieldsstyles({ width, height });
 

@@ -76,12 +76,14 @@ const Register = (props) => {
             placeholder="First Name"
             onChangeText={(val) => setFirstName(val)}
             value={firstName}
+            autoCapitalize="words"
           />
 
           <Globalfields
             placeholder="Family Name"
             onChangeText={(val) => setLastName(val)}
             value={lastName}
+            autoCapitalize="words"
           />
           <Globalfields
             placeholder="Email"
