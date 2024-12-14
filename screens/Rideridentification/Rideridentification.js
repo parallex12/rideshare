@@ -9,7 +9,6 @@ import StandardButton from "../../globalComponents/StandardButton";
 import { Quikify } from "quikify";
 import { GET_USER_DETAILS } from "../../state-management/types/types";
 import { getAuth } from "firebase/auth";
-import { SignOut } from "../../state-management/auth/auth";
 import { light } from "../../scheme";
 
 const Rideridentification = (props) => {
@@ -20,30 +19,20 @@ const Rideridentification = (props) => {
 
   const [isselect, setisSelect] = useState("");
   const [userDetails, setUserDetails] = useState({});
-
   useEffect(() => {
     setUserDetails(props?.get_user_details);
+    console.log("?")
     if (
-      (props?.get_user_details?.idFront ||
-        props?.get_user_details?.passportFront) &&
-      (props?.get_user_details?.idBack || props?.get_user_details?.idFront) &&
-      props?.get_user_details?.licenseBack &&
-      props?.get_user_details?.licenseFront
+      props?.get_user_details?.idFront?.submitted && props?.get_user_details?.idBack?.submitted &&
+      props?.get_user_details?.passportFront?.submitted && props?.get_user_details?.passportBack?.submitted &&
+      props?.get_user_details?.licenseFront?.submitted && props?.get_user_details?.licenseBack?.submitted
     ) {
+      props?.navigation?.navigate("PendingVerification")
       alert("Please Wait! \nYour verification is under process");
-      Quikify.update(`/users/${uid}`, { verification: "complete" })
-        .then((res) => {
-          // props?.navigation?.navigate("Login");
-          props?.SignOut();
-        })
-        .catch((error) => {
-          props?.SignOut();
-          console.error("Upload Error:", error);
-        });
+
     }
   }, [props?.get_user_details]);
 
-  console.log("here", isselect)
 
   const onNavigate = () => {
     switch (isselect) {
@@ -145,4 +134,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors.errors,
   get_user_details: state.main.get_user_details,
 });
-export default connect(mapStateToProps, { SignOut })(Rideridentification);
+export default connect(mapStateToProps, {})(Rideridentification);

@@ -47,6 +47,7 @@ import Aboutus from "../screens/Aboutus/Aboutus";
 import Splash from "../screens/Splash/Splash";
 import HistoryCustomer from "../screens/HistoryCustomer/HistoryCustomer";
 import LocationScreenRider from "../screens/LocationScreenRider/LocationScreenRider";
+import PendingVerification from "../screens/PendingVerification/PendingVerification";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -57,7 +58,6 @@ function AppNavigation() {
       <Screen name="Splash" component={Splash} />
       <Screen name="Home" component={Home} />
       <Screen name="Riderhome" component={Riderhome} />
-      {/* <Screen name="Onboarding1" component={Onboarding1} /> */}
       <Screen name="Lisenceverification" component={Lisenceverification} />
       <Screen name="Rideridverification" component={Rideridverification} />
       <Screen name="Documentphoto" component={Documentphoto} />
@@ -83,6 +83,8 @@ function AppNavigation() {
       <Screen name="Requestbooking" component={Requestbooking} />
       <Screen name="Availablecars" component={Availablecars} />
       <Screen name="Notifications" component={Notifications} />
+      <Screen name="PendingVerification" component={PendingVerification} />
+      {/* <Screen name="Onboarding1" component={Onboarding1} /> */}
       {/* <Screen name="Onboarding2" component={Onboarding2} /> */}
       {/* <Screen name="Onboarding3" component={Onboarding3} /> */}
       {/* <Screen name="Welcome" component={Welcome} /> */}

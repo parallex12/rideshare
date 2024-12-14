@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import { styles as _styles } from "../../styles/Onboarding/main";
 
 const Onboading1 = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -33,8 +33,7 @@ const Onboading1 = (props) => {
       <View style={styles.textwrapper}>
         <Text style={styles.anywheretext}>Anywhere you are</Text>
         <Text style={styles.selltext}>
-          Sell houses easily with the help of Listenoryx and to make this line
-          big I am writing more.
+          Make your journeys more affordable and enjoyable by sharing rides with companions.
         </Text>
       </View>
       <View style={styles.btnwrapper}>

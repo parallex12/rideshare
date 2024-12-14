@@ -43,11 +43,11 @@ export const sideMenuOptions = [
     title: "Help and Support",
     screenName: "Complain",
   },
-  {
-    icon: require("../assets/sidemenu/5.png"),
-    title: "Notification Settings",
-    screenName: "Notifications",
-  },
+  // {
+  //   icon: require("../assets/sidemenu/5.png"),
+  //   title: "Notification Settings",
+  //   screenName: "Notifications",
+  // },
   {
     icon: require("../assets/sidemenu/6.png"),
     title: "Contact & FAQ",

@@ -16,7 +16,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import StandardButton from "../../globalComponents/StandardButton";
 
 const Contactus = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
 
@@ -28,14 +28,14 @@ const Contactus = (props) => {
       />
       <View style={styles.textwrapper}>
         <Text style={styles.Contactusttext}>Contact us for Ride share</Text>
-        <Text style={styles.Contactusttext}>Address</Text>
+        {/* <Text style={styles.Contactusttext}>Address</Text>
         <Text style={styles.address}>
           House# 72, Road# 21, Banani, Dhaka-1213 (near Banani Bidyaniketon
           School &{"\n"}College, beside University of South Asia) {"\n"}
           {"\n"}Call : 13301 (24/7){"\n"}Email : support@pathao.com
           {"\n"}
         </Text>
-        <Text style={styles.Contactusttext}>Send Massege</Text>
+        <Text style={styles.Contactusttext}>Send Massege</Text> */}
       </View>
       <KeyboardAwareScrollView>
         <View style={{ marginTop: getPercent(1, height) }}>

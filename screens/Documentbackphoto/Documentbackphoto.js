@@ -19,7 +19,7 @@ import { firebaseImageUpload } from "../../middleware";
 import { Quikify } from "quikify";
 import { GET_USER_DETAILS } from "../../state-management/types/types";
 const Rideridverification = (props) => {
-  let {} = props;
+  let { } = props;
   let { width, height } = useWindowDimensions();
   let styles = _styles({ width, height });
   const type = props?.route?.params?.type;
@@ -34,7 +34,7 @@ const Rideridverification = (props) => {
       firebaseImageUpload(photo)
         .then((res) => {
           let photoDetail = type + "Back";
-          const data = { type: type, photoType: "back", photo: res?.url };
+          const data = { type: type, photoType: "back", photo: res?.url, submitted: true };
           const postData = { [photoDetail]: data };
           Quikify.update(`/users/${uid}`, postData)
             .then((res) => {

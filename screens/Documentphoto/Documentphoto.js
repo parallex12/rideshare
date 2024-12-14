@@ -35,7 +35,7 @@ const Rideridverification = (props) => {
       firebaseImageUpload(photo)
         .then((res) => {
           let photoDetail = type + "Front";
-          const data = { type: type, photoType: "front", photo: res?.url };
+          const data = { type: type, photoType: "front", photo: res?.url, submitted: true };
           const postData = { [photoDetail]: data };
           // const postData = { type: type, frontPhoto: res?.url };
 
